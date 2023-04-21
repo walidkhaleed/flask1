@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>New Post</title>
+{% endblock %}
+
+{% block body %}
+    <br><Br>
+    <h2>Ready For Changing ?</h2>
+    <Br>
+    <form action='/posts' method='POST'>
+        Title:
+
+        <input class="form-control" type="text" placeholder="Enter Title" name="title" id="title" aria-label="Enter Title">
+
+        <br>
+        Author:
+        <input class="form-control" type="text" placeholder="Author's name" aria-label="Author's name" name='author' id='author'>
+
+        <br>
+        <label for ="content" >Post:</label>
+        <textarea class="form-control" type="text" placeholder="What's on your mind?" aria-label="What's on your mind?" name='content' id='content' rows="3"></textarea>
+        <br>
+        <input type="submit" class="btn btn-success" value="Finish">
+    <input type="reset" class="btn btn-dark" value="Clear">
+    </form>
+    <hr>
+{% endblock %}

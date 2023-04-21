@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Guest|view</title>
+{% endblock %}
+
+{% block body %}
+    <br><br><br><br>
+<div>
+<h2 style="display: inline">Posts For You </h2>
+
+</div>
+
+
+     <hr>
+
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+
+<hr>
+
+        <p style="white-space: pre-wrap">{{ post.content }}</p>
+        {% if post.author %}
+                    <small>{{ post.author }} : {{ post.date_posted }}</small>
+                {% else %}
+                    <small>Unknown : {{ post.date_posted }}</small>
+                {% endif %}
+        <hr>
+    {% endfor%}
+<br><br>
+{% endblock %}
